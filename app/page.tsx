@@ -1,17 +1,40 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
+        <div className="flex items-center justify-between w-full max-w-4xl">
+          <Image
+            className="dark:invert"
+            src="/next.svg"
+            alt="Next.js logo"
+            width={180}
+            height={38}
+            priority
+          />
+          <div className="flex space-x-3">
+            <Link
+              href="/users"
+              className="rounded-full border border-solid border-green-600 bg-green-600 text-white transition-colors flex items-center justify-center hover:bg-green-700 font-medium text-sm h-10 px-6"
+            >
+              จัดการผู้ใช้
+            </Link>
+            <Link
+              href="/register"
+              className="rounded-full border border-solid border-purple-600 bg-purple-600 text-white transition-colors flex items-center justify-center hover:bg-purple-700 font-medium text-sm h-10 px-6"
+            >
+              สมัครสมาชิก
+            </Link>
+            <Link
+              href="/login"
+              className="rounded-full border border-solid border-indigo-600 bg-indigo-600 text-white transition-colors flex items-center justify-center hover:bg-indigo-700 font-medium text-sm h-10 px-6"
+            >
+              เข้าสู่ระบบ
+            </Link>
+          </div>
+        </div>
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
             Get started by editing{" "}
